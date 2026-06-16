@@ -8,7 +8,32 @@ import Footer from '../components/Footer';
 
 export const metadata = {
   title: 'Pratik G - Data Scientist Portfolio',
-  description: 'Turning raw data into meaningful decisions through code, curiosity, and leadership.',
+  description: 'Turning raw data into meaningful decisions through code, curiosity, and leadership. B.E. in Information Science and AIESEC leader.',
+  keywords: ['Pratik G', 'Data Scientist', 'Information Science Engineer', 'Python Developer', 'Machine Learning', 'Data Analysis', 'SQL', 'AIESEC', 'Portfolio', 'Bengaluru'],
+  authors: [{ name: 'Pratik G' }],
+  creator: 'Pratik G',
+  openGraph: {
+    title: 'Pratik G - Data Scientist & Engineer',
+    description: 'Turning raw data into meaningful decisions through code, curiosity, and leadership.',
+    url: 'https://pratikportfolio.pythonanywhere.com',
+    siteName: 'Pratik G Portfolio',
+    images: [
+      {
+        url: 'https://pratikportfolio.pythonanywhere.com/static/img/pratik.jpeg',
+        width: 800,
+        height: 800,
+        alt: 'Pratik G - Data Scientist',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pratik G - Data Scientist Portfolio',
+    description: 'Turning raw data into meaningful decisions through code, curiosity, and leadership.',
+    images: ['https://pratikportfolio.pythonanywhere.com/static/img/pratik.jpeg'],
+  },
   verification: {
     google: 'TX4IU0yOrYgn5Fn3c0Ep_KJI3TcgAsvph-Qt2u-nv5E',
   },
