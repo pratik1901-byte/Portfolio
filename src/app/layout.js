@@ -37,6 +37,11 @@ export const metadata = {
   verification: {
     google: 'TX4IU0yOrYgn5Fn3c0Ep_KJI3TcgAsvph-Qt2u-nv5E',
   },
+  icons: {
+    icon: 'https://pratikportfolio.pythonanywhere.com/static/img/pratik.jpeg',
+    shortcut: 'https://pratikportfolio.pythonanywhere.com/static/img/pratik.jpeg',
+    apple: 'https://pratikportfolio.pythonanywhere.com/static/img/pratik.jpeg',
+  },
 };
 
 export default function RootLayout({ children }) {
