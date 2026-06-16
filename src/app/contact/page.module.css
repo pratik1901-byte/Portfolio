@@ -1,0 +1,93 @@
+.loadingContainer {
+  height: 100vh; display: flex; align-items: center; justify-content: center;
+}
+
+.pageHero {
+  padding: 8rem 0 4rem; text-align: center;
+}
+
+.contactLayout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.contactInfo h2 { 
+  font-size: 2.25rem; margin-bottom: 1.5rem; color: var(--white); 
+  font-family: var(--font-display); letter-spacing: -0.02em;
+}
+.contactInfo > p { color: var(--text2); line-height: 1.8; margin-bottom: 3rem; font-size: 1.1rem; }
+
+.contactItems { display: flex; flex-direction: column; gap: 1rem; }
+.contactItem {
+  display: flex; align-items: center; gap: 1.25rem;
+  padding: 1.25rem 1.5rem; 
+  background: rgba(20, 28, 38, 0.4); backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg); transition: all 0.4s ease; color: var(--text);
+  position: relative; overflow: hidden;
+}
+
+.contactItem::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(to bottom, var(--accent), #8a2be2);
+  transform: scaleY(0); transform-origin: bottom; transition: transform 0.4s ease;
+}
+
+.contactItem:hover { 
+  border-color: rgba(0,212,180,0.3); 
+  background: rgba(20, 28, 38, 0.7); 
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.contactItem:hover::before { transform: scaleY(1); }
+
+.contactItem.noLink { cursor: default; }
+.contactItem.noLink:hover { transform: translateY(-4px); }
+.contactItem.noLink:hover::before { transform: scaleY(0); }
+
+.ciIcon {
+  width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 212, 180, 0.1); border-radius: 12px; color: var(--accent); flex-shrink: 0;
+  border: 1px solid rgba(0, 212, 180, 0.2);
+  transition: all 0.4s ease;
+}
+
+.ciIcon svg { width: 22px; height: 22px; transition: transform 0.4s ease; }
+.contactItem:hover .ciIcon { background: var(--accent); color: var(--bg); box-shadow: 0 0 15px rgba(0,212,180,0.4); }
+.contactItem:hover .ciIcon svg { transform: scale(1.1) rotate(-5deg); }
+
+.ciLabel { display: block; font-size: 0.75rem; color: var(--text3); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
+.ciValue { display: block; font-size: 1rem; font-weight: 500; color: var(--white); }
+
+.contactFormCard {
+  background: rgba(20, 28, 38, 0.4); backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg); padding: 3rem;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.contactFormCard h3 { font-size: 1.5rem; margin-bottom: 2rem; color: var(--white); font-family: var(--font-display); }
+
+.formGroup { margin-bottom: 1.5rem; }
+.formGroup label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text2); margin-bottom: 0.5rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; }
+.formGroup input, .formGroup textarea {
+  width: 100%; padding: 1rem 1.25rem;
+  background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius); color: var(--white); font-family: var(--font-body); font-size: 1rem;
+  transition: all 0.3s ease;
+  resize: vertical;
+}
+
+.formGroup input:focus, .formGroup textarea:focus {
+  outline: none; border-color: var(--accent); background: rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 4px rgba(0, 212, 180, 0.1);
+}
+
+.formAlert {
+  padding: 1rem 1.25rem; border-radius: var(--radius);
+  font-size: 0.95rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem;
+}
+
+.formAlert.success { background: rgba(40,200,128,0.1); color: #28c880; border: 1px solid rgba(40,200,128,0.2); box-shadow: 0 0 20px rgba(40,200,128,0.1); }
+.formAlert.error { background: rgba(255,95,87,0.1); color: #ff5f57; border: 1px solid rgba(255,95,87,0.2); box-shadow: 0 0 20px rgba(255,95,87,0.1); }
+
+@media (max-width: 900px) {
+  .contactLayout { grid-template-columns: 1fr; gap: 4rem; }
+}

@@ -1,0 +1,81 @@
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 2rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav.scrolled {
+  background: rgba(8, 11, 18, 0.92);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.navInner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+
+.navLogo {
+  font-family: 'Space Mono', monospace; font-size: 1.1rem; font-weight: 700;
+  color: #fff; letter-spacing: -0.02em;
+}
+
+.logoBracket { color: #00d4b4; }
+
+.navLinks {
+  display: flex; align-items: center; gap: 0.25rem;
+  list-style: none;
+}
+
+.navLink {
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem; font-weight: 500;
+  color: #8fa3b8; border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover, .navLink.active { 
+  color: #fff; background: #141c26; 
+}
+
+.navCta {
+  background: #00d4b4; color: #080b12 !important;
+  font-weight: 600; margin-left: 0.5rem;
+}
+
+.navCta:hover { 
+  background: #fff; transform: translateY(-1px); 
+}
+
+.navToggle {
+  display: none; background: transparent; border: none; cursor: pointer;
+  flex-direction: column; gap: 5px; width: 30px; height: 21px; z-index: 1001;
+}
+
+.navToggle span {
+  display: block; width: 100%; height: 2px; background: var(--white);
+  border-radius: 2px; transition: all 0.3s ease; transform-origin: left center;
+}
+
+@media (max-width: 768px) {
+  .navToggle { display: flex; }
+  
+  .navLinks {
+    position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px;
+    height: 100vh; background: rgba(8, 11, 18, 0.98); backdrop-filter: blur(20px);
+    flex-direction: column; align-items: flex-start; justify-content: center;
+    padding: 2rem; gap: 1rem; transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5); border-left: 1px solid var(--border);
+  }
+
+  .navLinks.open { right: 0; }
+
+  .navLink { font-size: 1.1rem; width: 100%; display: block; padding: 0.75rem 1rem; }
+  
+  .navCta { margin-left: 0; margin-top: 1rem; text-align: center; }
+
+  .openToggle span:nth-child(1) { transform: rotate(45deg); width: 25px; }
+  .openToggle span:nth-child(2) { opacity: 0; }
+  .openToggle span:nth-child(3) { transform: rotate(-45deg); width: 25px; }
+}

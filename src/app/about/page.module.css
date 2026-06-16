@@ -1,0 +1,196 @@
+.loadingContainer {
+  height: 100vh; display: flex; align-items: center; justify-content: center;
+}
+
+.pageHero {
+  padding: 8rem 0 4rem; text-align: center;
+}
+
+.aboutMain {
+  padding-bottom: 4rem;
+}
+
+.aboutGrid {
+  display: grid; grid-template-columns: 320px 1fr; gap: 5rem; align-items: start;
+}
+
+/* AVATAR CARD - Premium Glassmorphism */
+.avatarCard {
+  background: rgba(20, 28, 38, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  position: sticky;
+  top: 100px;
+  margin-top: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.avatarCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 180, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 212, 180, 0.3);
+}
+
+.avatarCircle {
+  width: 140px; height: 140px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #8a2be2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem; overflow: hidden; padding: 4px;
+  box-shadow: 0 0 20px rgba(0, 212, 180, 0.3);
+  position: relative;
+}
+
+.avatarCircle::before {
+  content: ''; position: absolute; inset: -5px;
+  background: conic-gradient(from 0deg, transparent, var(--accent), transparent);
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.avatarPhoto {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 50%; position: relative; z-index: 1;
+  border: 4px solid var(--surface);
+  transition: transform 0.5s ease;
+}
+
+.avatarCard:hover .avatarPhoto { transform: scale(1.05); }
+
+.avatarInfo h3 { font-size: 1.4rem; color: var(--white); margin-bottom: 0.25rem; font-family: var(--font-display); }
+.avatarInfo p { font-size: 0.95rem; color: var(--text3); margin-bottom: 1.25rem; }
+
+/* STATUS BADGE */
+.statusBadge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 1rem; border-radius: 50px;
+  background: rgba(40, 200, 128, 0.1); color: #28c880;
+  border: 1px solid rgba(40, 200, 128, 0.2);
+  font-size: 0.8rem; font-weight: 600; margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(40, 200, 128, 0.1);
+}
+
+.statusDot {
+  width: 8px; height: 8px; border-radius: 50%; background: currentColor;
+  box-shadow: 0 0 8px currentColor; animation: pulse 2s infinite;
+}
+
+@keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+
+.avatarLinks { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.iconLink {
+  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  padding: 0.85rem; border-radius: var(--radius); font-size: 0.9rem; font-weight: 600;
+  color: var(--text2); background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.iconLink svg { width: 18px; height: 18px; transition: transform 0.3s ease; }
+
+.iconLink:hover {
+  color: var(--bg); background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 4px 15px rgba(0, 212, 180, 0.3);
+}
+.iconLink:hover svg { transform: scale(1.1); }
+
+/* ABOUT TEXT */
+.aboutTextCol { padding-top: 1rem; }
+.aboutTextCol h2 { 
+  font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 2rem; 
+  background: linear-gradient(to right, #fff, #8fa3b8);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  font-family: var(--font-display); letter-spacing: -0.02em;
+}
+.aboutTextCol .lead { 
+  font-size: 1.25rem; color: var(--text); margin-bottom: 1.5rem; line-height: 1.8; 
+  font-weight: 300; border-left: 3px solid var(--accent); padding-left: 1.5rem;
+}
+.aboutTextCol p { color: var(--text2); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+/* ===== EDUCATION ===== */
+.educationSection { background: var(--bg2); padding: 5rem 0; position: relative; }
+.educationSection::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.eduCard {
+  display: flex; align-items: center; gap: 2.5rem;
+  padding: 3rem; background: rgba(20, 28, 38, 0.4); backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg); max-width: 800px; margin: 0 auto;
+  transition: all 0.4s ease; position: relative; overflow: hidden;
+}
+
+.eduCard::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), #8a2be2);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+}
+
+.eduCard:hover { border-color: rgba(255, 255, 255, 0.1); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+.eduCard:hover::after { transform: scaleX(1); }
+
+.eduIcon { font-size: 3.5rem; flex-shrink: 0; filter: drop-shadow(0 0 15px rgba(255,255,255,0.2)); }
+.eduContent { flex: 1; }
+.eduContent h3 { font-size: 1.5rem; color: var(--white); margin-bottom: 0.4rem; font-family: var(--font-display); }
+.eduContent h4 { font-size: 1.1rem; color: var(--accent); margin-bottom: 0.6rem; font-weight: 500; }
+.eduContent p { font-size: 0.95rem; color: var(--text2); line-height: 1.6; }
+.eduBadge {
+  font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;
+  color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+}
+
+/* ===== VALUES ===== */
+.valuesSection { padding: 6rem 0; }
+.valuesGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+.valueCard {
+  padding: 2.5rem; background: rgba(255, 255, 255, 0.02); 
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative; overflow: hidden;
+}
+
+.valueCard::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at top right, rgba(0, 212, 180, 0.1), transparent 70%);
+  opacity: 0; transition: opacity 0.4s ease;
+}
+
+.valueCard:hover { 
+  border-color: rgba(0,212,180,0.3); transform: translateY(-5px); 
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.valueCard:hover::before { opacity: 1; }
+
+.valueNum {
+  font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;
+  color: transparent; -webkit-text-stroke: 1px var(--accent);
+  margin-bottom: 1.5rem; opacity: 0.6; display: inline-block;
+  transition: all 0.4s ease;
+}
+
+.valueCard:hover .valueNum { opacity: 1; transform: scale(1.1) translateX(5px); text-shadow: 0 0 20px var(--accent-glow); }
+
+.valueCard h3 { font-size: 1.25rem; color: var(--white); margin-bottom: 1rem; font-family: var(--font-display); position: relative; z-index: 1; }
+.valueCard p { font-size: 0.95rem; color: var(--text2); line-height: 1.7; position: relative; z-index: 1; }
+
+@media (max-width: 900px) {
+  .aboutGrid { grid-template-columns: 1fr; gap: 3rem; }
+  .avatarCard { position: static; max-width: 400px; margin: 0 auto; }
+  .valuesGrid { grid-template-columns: 1fr; }
+  .aboutTextCol { text-align: center; }
+  .aboutTextCol .lead { border-left: none; border-top: 3px solid var(--accent); padding-left: 0; padding-top: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  .eduCard { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem; }
+  .eduBadge { display: none; }
+}
