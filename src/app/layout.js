@@ -9,6 +9,9 @@ import Footer from '../components/Footer';
 export const metadata = {
   title: 'Pratik G - Data Scientist Portfolio',
   description: 'Turning raw data into meaningful decisions through code, curiosity, and leadership.',
+  verification: {
+    google: 'TX4IU0yOrYgn5Fn3c0Ep_KJI3TcgAsvph-Qt2u-nv5E',
+  },
 };
 
 export default function RootLayout({ children }) {
